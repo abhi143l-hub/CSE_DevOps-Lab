@@ -1,10 +1,9 @@
-# CSE_DevOps-Lab
-<!DOCTYPE HTML>
-<body>
-<h1>
-  hello abhi
-</h1>
-  <p>
-  today i had class test and i had not wirtten tze class test good
-  </p>
-</body>
+# Ask user for email
+email = input("Enter your email: ")
+
+# Ask user for password (input hidden)
+import getpass
+password = getpass.getpass("Enter your password: ")
+
+print("Email entered:", email)
+print("Password entered: [hidden]")  # Do not print password in real use
