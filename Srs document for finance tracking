@@ -1,0 +1,151 @@
+Software Requirements Specification (SRS)
+1. Introduction
+1.1 Purpose
+This document specifies the requirements for a transaction management mobile application that allows users to store bills and related transaction details securely. The app facilitates language selection, user registration, transaction recording via automatic or manual methods, transaction overview, note-taking, reminders, and reporting features.
+
+1.2 Scope
+The app will help users track their income and expenses by storing transaction data locally and backing it up via Firebase. It supports multiple languages and provides features for managing transaction history, notes, and reminders.
+
+1.3 Definitions, Acronyms, and Abbreviations
+OCR: Optical Character Recognition
+
+UI: User Interface
+
+Firebase: Backend as a Service platform providing authentication and database
+
+SRS: Software Requirements Specification
+
+2. Overall Description
+2.1 Product Perspective
+The app is a standalone mobile application designed for personal financial management, focusing on bill storage, transaction tracking, and reports generation.
+
+2.2 Product Functions
+Language selection on app launch
+
+User registration and authentication
+
+Income and expense input via scanning bills or manual entry
+
+Transaction details summary with total income and expenses
+
+Notepad and reminder/alarm functionality
+
+Monthly and yearly report generation
+
+Data storage locally and cloud backup on Firebase
+
+2.3 User Classes and Characteristics
+New users: Require registration
+
+Returning users: Access stored data and features after login
+
+Users prefer data stored safely and accessible across devices
+
+2.4 Operating Environment
+Mobile devices (Android/iOS)
+
+JavaScript runtime environment suitable for app development
+
+2.5 Design and Implementation Constraints
+Use local device storage for offline data access
+
+Use Firebase for authentication and cloud backup
+
+App icon must be a rupee symbol
+
+Multilingual support for English, Telugu, and Hindi
+
+3. Specific Requirements
+3.1 User Interface Requirements
+3.1.1 Language Selection Screen
+Prompt user to select language (English, Telugu, Hindi) on first launch
+
+App UI adapts to selected language
+
+3.1.2 Registration Screen
+Prompt for username, email, and password
+
+Password verification and validation
+
+Email verification via Firebase
+
+3.1.3 Main Screens (Three Slides)
+Slide 1: Transaction Entry
+Choose "Income" or "Expense"
+
+Two input modes:
+
+Automatic scan (using OCR to extract date, shop name, items, amount, and store bill image)
+
+Manual entry (enter date, bill details, amount, upload bill proof)
+
+Slide 2: Transaction Summary
+Display separate lists of income and expenses
+
+Show total income and total expenses at the top
+
+Slide 3: Notes and Reminders
+Simple notepad to store text notes
+
+Reminder (alarm) feature to alert users
+
+3.2 Functional Requirements
+3.2.1 Registration
+New users must register before using the app
+
+Email verification through Firebase
+
+Password security checks
+
+3.2.2 Transaction Handling
+OCR scan should extract key data from bills accurately
+
+Users can manually add transaction details if preferred
+
+Data stored locally and backed up to Firebase cloud database
+
+3.2.3 Reports
+Generate and display monthly and yearly transaction reports
+
+Reports include summaries of income, expenses, and net balance
+
+3.2.4 Reminders
+User can set daily or weekly reminders to log transactions
+
+Notifications generated accordingly
+
+3.3 Performance Requirements
+Fast and accurate OCR processing of scanned bills
+
+Responsive UI in multiple languages
+
+Reliable local storage and synchronization with cloud
+
+3.4 Security Requirements
+User authentication and email verification via Firebase
+
+Secure handling of passwords and personal data
+
+Data backups to cloud storage to prevent loss
+
+3.5 Data Storage
+Store all transaction details, bill images, notes locally on device
+
+Synchronized backup of data on Firebase backend
+
+4. External Interface Requirements
+4.1 Hardware Interfaces
+Camera access for bill scanning
+
+4.2 Software Interfaces
+Firebase Authentication for email verification
+
+Firebase Realtime Database or Firestore for backup
+
+OCR library or service for bill scanning and text extraction
+
+5. Appendix
+5.1 Assumptions and Dependencies
+Users have internet access for registration and cloud backup
+
+Device supports local storage and camera functionality
